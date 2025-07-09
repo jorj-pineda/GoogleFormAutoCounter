@@ -6,21 +6,29 @@ This form counter allows forms to close as soon as X participants is reached, al
 
 Created November 2024
 
+
+
+
+
+
+
+
+
 ## Instructions
 
 These are the instructions to the code for automated google forms for GDS made by yours truly: Jorge Pineda, Fall 2024. 
 
-UPDATED SUMMER 2025
 
 Any updates to the code specify below and state your name and semester of making updates:
 ____ ____ _____
+Jorge Pineda, Summer 2025
 
 HERE ARE THE INSTRUCTIONS: 
 
 This is the link to the form with the original code: https://docs.google.com/forms/d/1Ns4Gjiw8NV4ALqtHVWmfNrP7TKekzQdgy-jmQbAkPW0/edit
 
 This will take you to this place: 
-![alt text] Picture1
+![alt text] [Picture1]
 
 To access the code you need to go into the script editor: 
  
