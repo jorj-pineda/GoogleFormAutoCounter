@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <script>
+      function updateTitle() {
+        google.script.run.withSuccessHandler(function(remainingSpots) {
+          document.title = 'TITLE OF SITE ' + remainingSpots + "/5"; //CHANGE THIS JUST LIKE IN CODE.GS
+        }).getRemainingSpots();
+      }
+      
+      setInterval(updateTitle, 5000); // Update every 5 seconds 
+    </script>
+  </head>
+  <body onload="updateTitle()">
+    <h1>Google Form with Live Countdown</h1>
+    <p>The title of this page will update with the remaining spots.</p>
+  </body>
+</html>
