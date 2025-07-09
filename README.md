@@ -28,7 +28,7 @@ HERE ARE THE INSTRUCTIONS:
 This is the link to the form with the original code: https://docs.google.com/forms/d/1Ns4Gjiw8NV4ALqtHVWmfNrP7TKekzQdgy-jmQbAkPW0/edit
 
 This will take you to this place: 
-![alt text] [Picture1]
+![alt text] [InstructionImages/Picture1]
 
 To access the code you need to go into the script editor: 
  
