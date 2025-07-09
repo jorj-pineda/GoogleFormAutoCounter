@@ -14,7 +14,7 @@ Created November 2024
 
 
 
-
+</pre>
 ## Instructions
 
 These are the instructions to the code for automated google forms for GDS made by yours truly: Jorge Pineda, Fall 2024. 
@@ -65,9 +65,11 @@ You will click on Front.html in the original doc where you find the code for the
 ![alt text](https://github.com/jorj-pineda/GoogleFormAutoCounter/blob/main/InstructionImages/Picture5.png "pic 5")
 
 Copy and paste original code into new HTML you just made in your project and change to your fitting. 
+<pre>
 
 
-
+   
+</pre>
 
 Next you will deploy to add trigger. Click on deploy top right and do the following 
 Select type and click web app. Then name the title to the corresponding form. Then keep options as seen and hit deploy. Authorize the access and boom (yes it’s fine I am not hacking your computer) Click done when you finished
@@ -110,9 +112,12 @@ That means it’s running correctly. You can test by filling a form out and it s
 
 
 That concludes the instructions. Below is an example to help if you are having trouble
+<pre>
 
 
 
+   
+</pre>
 
 
 ### EXAMPLE TO HELP
@@ -191,4 +196,4 @@ Then your form will now update based on total spots and close automatically when
 
 
 IF CODE DOESN’T WORK: Call Jorge (956) 408-5230
-</pre>
+
