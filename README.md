@@ -15,6 +15,17 @@ Created November 2024
 
 
 </pre>
+## Optional website integration (new)
+
+The counter can optionally report aggregate availability to the Service Station website without
+sending participant responses. Reporting is disabled until Script Properties are configured.
+Read [WEBSITE-SYNC.md](docs/WEBSITE-SYNC.md) for the contract, copied-form test procedure, configuration
+and receiver prerequisites. The website receiver is a separate PR; do not deploy this change to
+working office forms without the test rollout. The historical instructions below describe the
+original counter; use the new configuration block rather than changing duplicated title literals.
+
+Local tests (Node 22+): `node --test test/*.test.cjs`.
+
 ## Instructions
 
 These are the instructions to the code for automated google forms for GDS made by yours truly: Jorge Pineda, Fall 2024. 
