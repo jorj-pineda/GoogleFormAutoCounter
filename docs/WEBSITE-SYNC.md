@@ -11,7 +11,9 @@ individual places available **after** staff assign the early groups. For example
 20 physical places go to groups, set this counter to 8. After 3 individual responses, it reports
 5 of 8 individual places left. Never subtract group allocations again on the website.
 
-The script still updates the title and closes the form at capacity. It does not reopen a manually
+The script still updates the title and closes the form at capacity. If Google rejects the custom
+closed-form message, it keeps the form closed and still reports zero remaining; the default Google
+message may appear instead. It does not reopen a manually
 or previously closed form, create new triggers automatically, or change the office's group process.
 A website click is not a registration or reservation. Near-simultaneous responses can arrive before
 a trigger closes the form; this bridge does not provide atomic reservations or cure overbooking.

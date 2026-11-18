@@ -11,7 +11,7 @@ const configured = {
   SSTATION_SYNC_SECRET: secret
 };
 
-function fixture({ responses = 2, accepting = true, properties = {}, status = 204, fail = false } = {}) {
+function fixture({ responses = 2, accepting = true, properties = {}, status = 204, fail = false, closedMessageFails = false } = {}) {
   const logs = [], requests = [], triggers = [];
   const form = {
     accepting,
@@ -19,7 +19,7 @@ function fixture({ responses = 2, accepting = true, properties = {}, status = 20
     isAcceptingResponses() { return this.accepting; },
     setAcceptingResponses(value) { this.accepting = value; },
     setTitle(value) { this.title = value; },
-    setCustomClosedFormMessage(value) { this.closedMessage = value; }
+    setCustomClosedFormMessage(value) { if (closedMessageFails) throw new Error("Invalid data updating form."); this.closedMessage = value; }
   };
   const context = vm.createContext({
     FormApp: { openById(id) { form.id = id; return form; } },
@@ -168,4 +168,17 @@ test('the existing trigger helper still schedules the same entry point every min
   assert.equal(f.triggers.length, 1);
   assert.equal(f.triggers[0].name, 'updateFormTitle');
   assert.equal(f.triggers[0].minutes, 1);
+});
+
+// Reproduced against a newly published disposable Google Form during live integration testing.
+test('a rejected custom closed message does not suppress the full-site observation', () => {
+  const f = fixture({ properties: configured, responses: 5, closedMessageFails: true });
+  assert.doesNotThrow(() => f.context.updateFormTitle());
+  assert.equal(f.form.accepting, false);
+  assert.equal(f.form.title, 'Form Closed - No Spots Left');
+  assert.equal(f.requests.length, 1);
+  const body = JSON.parse(f.requests[0].options.payload);
+  assert.equal(body.remaining, 0);
+  assert.equal(body.acceptingResponses, false);
+  assert.ok(f.logs.some(line => line.includes('Custom closed message could not be updated')));
 });

@@ -22,7 +22,13 @@ function updateFormTitle() {
   if (remainingSpots === 0) {
     form.setAcceptingResponses(false);
     form.setTitle(config.fullTitle);
-    form.setCustomClosedFormMessage(config.closedMessage);
+    // Some published forms reject a custom closed message after accepting the closure.
+    // Cosmetic text must not prevent the aggregate update for an already-closed form.
+    try {
+      form.setCustomClosedFormMessage(config.closedMessage);
+    } catch (error) {
+      Logger.log('Custom closed message could not be updated. The form is closed.');
+    }
     Logger.log('Form Closed - No Spots Left');
   } else {
     // Deliberately do not reopen a form that the office has closed.
